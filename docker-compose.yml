@@ -1,0 +1,40 @@
+version: '3'
+services:
+  pinito-db:
+    image: postgres:13
+    env_file:
+      - ./data/.env
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    networks:
+      - pinito-net
+  pinito-backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
+    container_name: backend
+    restart: always
+    ports:
+      - 5000:5000
+    networks:
+      - pinito-net
+  pinito-frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    env_file:
+      - ./frontend/.env
+    container_name: frontend
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - pinito-net
+
+networks:
+  pinito-net:
+    driver: bridge
