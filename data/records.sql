@@ -20,11 +20,11 @@ VALUES
 
 INSERT INTO mesero
 VALUES
-    ('CC852147','Juan','Perez','Jimenez')
-    ('TI326598','Alberto','Gonzales','Blanco')
-    ('CC741258','María','Viera','Castro')
-    ('CC1346798','Óscar','Pardo','Naranjo')
-    ('TI951753','Ana','Cabrera','Pantoja')
+    ('CC852147','Juan','Perez','Jimenez'),
+    ('TI326598','Alberto','Gonzales','Blanco'),
+    ('CC741258','María','Viera','Castro'),
+    ('CC1346798','Óscar','Pardo','Naranjo'),
+    ('TI951753','Ana','Cabrera','Pantoja');
 
 -- Insert (4) platillos
 INSERT INTO platillo (nombre, importe)
