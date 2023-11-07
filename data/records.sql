@@ -11,7 +11,7 @@ VALUES (5, 'PSAM36265-2','Andres', 'Perez', 'ninguna');
 
 INSERT INTO cliente(observaciones, identificacion, nombre, apellido, idCliente)
 VALUES
-  ('Cliente problematico', 'CC928277299', 'Miguel', 'Cardenas', 6)
+  ('Cliente problematico', 'CC928277299', 'Miguel', 'Cardenas', 6);
 
 -- Insert (5) meseros
 INSERT INTO mesero(identificacion, nombre, apellido1, apellido2)
@@ -60,5 +60,8 @@ VALUES
   (10, 2, 'Barra');
 
 -- Insert (3) facturas
-
-
+INSERT INTO factura 
+VALUES 
+    (1, '2023-11-07', 1, 3, 3, 2, 1)
+    (2, '2022-05-27', 5, 3, 4, 1, 1)
+    (3, '2023-11-01', 3, 3, 2, 3, 1);

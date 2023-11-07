@@ -1,4 +1,4 @@
-# README - Aplicación Contenerizada de Restaurante
+# Contenerizada de Restaurante
 ## Curso de base de datos 2023-II
 
 ## Descripción
