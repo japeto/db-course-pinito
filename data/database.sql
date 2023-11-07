@@ -15,11 +15,16 @@ CREATE TABLE mesero(
   apellido2 VARCHAR(100),
   PRIMARY KEY(idMesero)
 );
+
+CREATE SEQUENCE seq_platillo
+  START 4
+  INCREMENT 2;
 -- tabla platillo
 CREATE TABLE platillo(
-  idPlatillo INT PRIMARY KEY,
+  idPlatillo INT NOT NULL DEFAULT nextval('table_name_id_seq'),
   nombre VARCHAR(45),
-  importe INT
+  importe INT,
+  PRIMARY KEY(idPlatillo)
 );
 -- tabla bebida
 CREATE TABLE bebida(
