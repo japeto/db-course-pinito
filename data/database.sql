@@ -17,8 +17,8 @@ CREATE TABLE mesero(
 );
 
 CREATE SEQUENCE seq_platillo
-  START 4
-  INCREMENT 2;
+  START 1
+  INCREMENT 1;
 -- tabla platillo
 CREATE TABLE platillo(
   idPlatillo INT DEFAULT nextval('seq_platillo'),

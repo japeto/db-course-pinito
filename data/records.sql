@@ -18,7 +18,7 @@ INSERT INTO mesero(identificacion, nombre, apellido1, apellido2)
 VALUES
   ('PSA73626-8','John Camilo', 'Cantillo','Smith');
 
-INSERT INTO mesero
+INSERT INTO mesero(identificacion, nombre, apellido1, apellido2)
 VALUES
     ('CC852147','Juan','Perez','Jimenez'),
     ('TI326598','Alberto','Gonzales','Blanco'),
@@ -36,7 +36,7 @@ VALUES
   ('Pizza Margarita', 12000),
   ('Espagueti Alfredo', 10000);
 
--- Insert (4) bebidas
+-- Inrt (4) bebidas
 INSERT INTO bebida (idBebida, nombre, importe)
 VALUES
   (1, 'Agua mineral', 3000),
@@ -45,7 +45,7 @@ VALUES
   (4, 'Cerveza artesanal', 5500);
 
 -- Insert (6) mesas
-INSERT INTO mesa (id_mesa, numComensales, ubicacion)
+INSERT INTO mesa (idMesa, numComensales, ubicacion)
 VALUES
   (1, 4, 'Ventana'),
   (2, 6, 'Terraza'),
@@ -56,12 +56,12 @@ VALUES
   (7, 4, 'Ventana'),
   (8, 4, 'Ventana'),
   (9, 3, 'Terraza'),
-  (9, 2, 'Terraza'),
-  (10, 2, 'Barra');
+  (10, 2, 'Terraza'),
+  (11, 2, 'Barra');
 
 -- Insert (3) facturas
 INSERT INTO factura 
 VALUES 
-    (1, '2023-11-07', 1, 3, 3, 2, 1)
-    (2, '2022-05-27', 5, 3, 4, 1, 1)
-    (3, '2023-11-01', 3, 3, 2, 3, 1);
+    (1, '2023-11-07', 1, 3, 3, 4, 1),
+    (2, '2022-05-27', 5, 3, 4, 4, 1),
+    (3, '2023-11-01', 3, 3, 2, 4, 1);
