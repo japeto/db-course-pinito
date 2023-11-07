@@ -1,16 +1,18 @@
 --- tabla ciente
 CREATE TABLE cliente(
   idCliente INT PRIMARY KEY,
-  nombre VARCHAR(45),
-  apellido VARCHAR(45),
-  observaciones VARCHAR(45)
+  identificacion VARCHAR(100),
+  nombre VARCHAR(100),
+  apellido VARCHAR(100),
+  observaciones VARCHAR(300)
 );
 --- tabla mesero
 CREATE TABLE mesero(
-  idMesero INT,
-  nombre VARCHAR(45),
-  apellido1 VARCHAR(45),
-  apellido2 VARCHAR(45),
+  idMesero SERIAL,
+  identificacion VARCHAR(100),
+  nombre VARCHAR(100),
+  apellido1 VARCHAR(100),
+  apellido2 VARCHAR(100),
   PRIMARY KEY(idMesero)
 );
 -- tabla platillo
