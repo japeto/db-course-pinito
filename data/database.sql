@@ -21,7 +21,7 @@ CREATE SEQUENCE seq_platillo
   INCREMENT 2;
 -- tabla platillo
 CREATE TABLE platillo(
-  idPlatillo INT NOT NULL DEFAULT nextval('table_name_id_seq'),
+  idPlatillo INT NOT NULL DEFAULT nextval('seq_platillo'),
   nombre VARCHAR(45),
   importe INT,
   PRIMARY KEY(idPlatillo)
