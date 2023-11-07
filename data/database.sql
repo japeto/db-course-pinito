@@ -38,10 +38,10 @@ CREATE TABLE factura(
   idFactura INT PRIMARY KEY,
   fechaFactura DATE,
   numCliente INT,
-  idMesero INT,
-  idMesa INT,
-  idPlatillo INT,
-  idBebida INT,
+  idMesero INT NOT NULL,
+  idMesa INT NOT NULL,
+  idPlatillo INT NOT NULL,
+  idBebida INT NOT NULL,
   CONSTRAINT fk_fact_cli 
     FOREIGN KEY(numCliente) 
     REFERENCES cliente(idCliente) ON UPDATE NO ACTION ON DELETE RESTRICT,
