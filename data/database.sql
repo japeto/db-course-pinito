@@ -42,18 +42,24 @@ CREATE TABLE mesa(
 ALTER TABLE mesa RENAME id_mesa TO idMesa;
 
 CREATE TABLE factura(
-  idFactura INT PRIMARY KEY,
+  idFactura SERIAL PRIMARY KEY,
   fechaFactura DATE,
   numCliente INT,
   idMesero INT NOT NULL,
   idMesa INT NOT NULL,
-  idPlatillo INT NOT NULL,
-  idBebida INT NOT NULL,
+  monto INT NOT NULL,
   CONSTRAINT fk_fact_cli 
     FOREIGN KEY(numCliente) 
     REFERENCES cliente(idCliente) ON UPDATE NO ACTION ON DELETE RESTRICT,
   FOREIGN KEY(idMesero) REFERENCES mesero(idMesero) ON UPDATE RESTRICT ON DELETE RESTRICT,
-  FOREIGN KEY(idMesa) REFERENCES mesa(idMesa) ON UPDATE NO ACTION ON DELETE CASCADE,
-  FOREIGN KEY(idPlatillo) REFERENCES platillo(idPlatillo),
-  FOREIGN KEY(idBebida) REFERENCES bebida(idBebida)
+  FOREIGN KEY(idMesa) REFERENCES mesa(idMesa) ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+CREATE TABLE detalle(
+  idFactura  INT NOT NULL,
+  idPlatillo INT NOT NULL,
+  idBebida INT NOT NULL,
+  FOREIGN KEY(idFactura) REFERENCES factura(idFactura),
+  FOREIGN KEY(idBebida) REFERENCES bebida(idBebida),
+  FOREIGN KEY(idPlatillo) REFERENCES platillo(idPlatillo)
 );
