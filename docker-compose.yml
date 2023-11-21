@@ -12,7 +12,17 @@ services:
       - ./data/records.sql:/docker-entrypoint-initdb.d/01-records.sql
       - ./data/records.sql:/docker-entrypoint-initdb.d/02-triggers.sql
     networks:
-      - pinito-net
+      - pinitonet
+  pinito-pgadmin:
+    image: dpage/pgadmin4
+    container_name: mypgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pinitoprueba@yopmail.com
+      PGADMIN_DEFAULT_PASSWORD: P1niT0
+    ports:
+      - "5050:80"
+    networks:
+      - pinitonet
   pinito-backend:
     build: 
       context: ./backend
@@ -24,7 +34,7 @@ services:
     ports:
       - 5000:5000
     networks:
-      - pinito-net
+      - pinitonet
   pinito-frontend:
     build: 
       context: ./frontend
@@ -36,8 +46,8 @@ services:
     ports:
       - 80:80
     networks:
-      - pinito-net
+      - pinitonet
 
 networks:
-  pinito-net:
+  pinitonet:
     driver: bridge
