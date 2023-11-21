@@ -10,3 +10,12 @@ BEGIN
 		ORDER BY ins.id;
 	RETURN numCursos;
 END;
+
+-- Ejemplo de uso
+--- SELECT est.nombre, cantidad_cursos(est.codigo) 
+--- FROM estudiante est
+
+-- Ejemplo de uso
+--- SELECT est.codigo, est.nombre, est.apellido 
+--- FROM estudiante est
+--- WHERE cantidad_cursos(est.codigo)  > 3
