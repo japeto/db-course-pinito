@@ -10,6 +10,7 @@ services:
       - ./data/db:/var/lib/postgresql/data
       - ./data/database.sql:/docker-entrypoint-initdb.d/00-database.sql
       - ./data/records.sql:/docker-entrypoint-initdb.d/01-records.sql
+      - ./data/records.sql:/docker-entrypoint-initdb.d/02-triggers.sql
     networks:
       - pinito-net
   pinito-backend:
