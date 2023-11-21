@@ -11,6 +11,8 @@ services:
       - ./data/00-database.sql:/docker-entrypoint-initdb.d/00-database.sql
       - ./data/01-records.sql:/docker-entrypoint-initdb.d/01-records.sql
       - ./data/02-triggers.sql:/docker-entrypoint-initdb.d/02-triggers.sql
+      - ./data/03-functions.sql:/docker-entrypoint-initdb.d/03-functions.sql
+      - ./data/04-procedures.sql:/docker-entrypoint-initdb.d/04-procedures.sql
     networks:
       - pinitonet
   pinito-pgadmin:
